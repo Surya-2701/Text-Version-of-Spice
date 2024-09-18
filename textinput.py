@@ -3,7 +3,7 @@ import pyttsx3
 import requests
 
 text_to_speech = pyttsx3.init()
-newsapikey = "24831b80e73e4e1fabd98604b0d75c30"
+newsapikey = "YOUR_KEY"
 music = "https://youtu.be/1OAjeECW90E?si=AizewRLNIdRhv5-T"
 
 def speak(text):
