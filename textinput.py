@@ -4,7 +4,7 @@ import requests
 
 text_to_speech = pyttsx3.init()
 newsapikey = "YOUR_KEY"
-music = "https://youtu.be/1OAjeECW90E?si=AizewRLNIdRhv5-T"
+music = "Your_link"
 
 def speak(text):
     text_to_speech.say(text)
