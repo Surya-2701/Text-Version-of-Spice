@@ -13,3 +13,12 @@ Constructs a YouTube search URL based on user input and opens it in the browser.
 News Fetching
 Command: news
 Retrieves and reads top U.S. headlines using NewsAPI.
+Interactive Commands
+test_spice1 to start the assistant.
+quit to exit the program.
+Error Handling
+Includes basic error management to handle invalid input or API issues.
+Dependencies
+pyttsx3: for text-to-speech.
+requests: for API interactions.
+webbrowser: for opening URLs.
