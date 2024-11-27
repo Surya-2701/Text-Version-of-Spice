@@ -22,3 +22,21 @@ Dependencies
 pyttsx3: for text-to-speech.
 requests: for API interactions.
 webbrowser: for opening URLs.
+Setup
+Clone the repository.
+Install dependencies:
+bash
+Copy code
+pip install pyttsx3 requests
+Add your NewsAPI key in the code (YOUR_KEY).
+Run the program:
+bash
+Copy code
+python textinput.py
+Usage
+Start the assistant with test_spice1.
+Use commands:
+Google Search: open Google
+YouTube: open YouTube or play
+News: news
+Quit: quit
