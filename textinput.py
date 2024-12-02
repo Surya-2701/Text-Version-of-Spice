@@ -56,3 +56,18 @@ def fetch_news():
     except requests.RequestException as e:
         print(f"An error occurred while fetching news: {e}")
         speak("An error occurred while fetching the news.")
+def giventask(cmd):
+    """Execute a command based on user input."""
+    if "open google" in cmd:
+        search_google()
+    elif "open youtube" in cmd or "play" in cmd:
+        search_youtube()
+    elif "news" in cmd:
+        fetch_news()
+    else:
+        print("Command not recognized. Please try again.")
+        speak("Command not recognized. Please try again.")
+
+if __name__ == "__main__":
+    print("Starting system, please wait.....")
+    speak("Initializing system...")
