@@ -71,3 +71,27 @@ def giventask(cmd):
 if __name__ == "__main__":
     print("Starting system, please wait.....")
     speak("Initializing system...")
+    while True:
+        try:
+            initial_cmd = input("Type 'start' to begin or 'quit' to exit: ").strip().lower()
+            if initial_cmd == "start":
+                print("System initialized. Ready to take commands.")
+                speak("System initialized. Ready to take commands.")
+                while True:
+                    task = input("You can type your command now (or type 'exit' to return): ").strip().lower()
+                    if task == "exit":
+                        print("Returning to main menu...")
+                        speak("Returning to main menu.")
+                        break
+                    print(f"Executing: {task}")
+                    giventask(task)
+            elif initial_cmd == "quit":
+                print("Exiting system...")
+                speak("Goodbye!")
+                break
+            else:
+                print("Invalid input. Please type 'start' to begin or 'quit' to exit.")
+                speak("Invalid input. Please type start to begin or quit to exit.")
+        except Exception as e:
+            print(f"An unexpected error occurred: {e}")
+            speak("An unexpected error occurred. Please try again.")
