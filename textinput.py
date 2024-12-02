@@ -23,3 +23,12 @@ def search_google():
         webbrowser.open(google_search_url)
     else:
         print("No search query provided.")
+def search_youtube():
+    """Search YouTube for a user-provided query."""
+    search_query = input("What do you want to play on YouTube? ")
+    if search_query.strip():
+        youtube_search_url = f"https://www.youtube.com/results?search_query={search_query.replace(' ', '+')}"
+        print(f"Searching and playing: {search_query}")
+        webbrowser.open(youtube_search_url)
+    else:
+        print("No search query provided.")
