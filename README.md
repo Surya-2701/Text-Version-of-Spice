@@ -40,3 +40,26 @@ Google Search: open Google
 YouTube: open YouTube or play
 News: news
 Quit: quit
+
+
+
+Key Improvements:
+Error Handling:
+
+Added better handling for empty inputs or invalid commands.
+Catches and logs network-related errors during the news fetch operation.
+Code Modularization:
+
+Broke down functionality into smaller, reusable functions for each task.
+Input Validation:
+
+Ensures meaningful user inputs (e.g., non-empty search queries).
+Limiting Results:
+
+Limits the number of headlines read aloud to the top 5 for better user experience.
+Clear User Feedback:
+
+Provides appropriate messages when operations succeed or fail.
+Reusability:
+
+Added a loop to allow repeated tasks without restarting the program.
