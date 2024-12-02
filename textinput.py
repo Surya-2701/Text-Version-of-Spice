@@ -32,3 +32,27 @@ def search_youtube():
         webbrowser.open(youtube_search_url)
     else:
         print("No search query provided.")
+def fetch_news():
+    """Fetch and read aloud the top news headlines."""
+    try:
+        response = requests.get(f"https://newsapi.org/v2/top-headlines?country=us&apiKey={NEWS_API_KEY}")
+        if response.status_code == 200:
+            data = response.json()
+            if "articles" in data:
+                articles = data["articles"]
+                if articles:
+                    for article in articles[:5]:  # Limit to top 5 headlines
+                        title = article.get('title', 'No title available')
+                        print(title)
+                        speak(title)
+                else:
+                    print("No news articles available.")
+                    speak("No news articles available.")
+            else:
+                print("Unexpected data format received.")
+        else:
+            print(f"Failed to fetch news: {response.status_code}")
+            speak("I was unable to fetch the news.")
+    except requests.RequestException as e:
+        print(f"An error occurred while fetching news: {e}")
+        speak("An error occurred while fetching the news.")
