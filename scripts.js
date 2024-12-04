@@ -45,3 +45,32 @@ document.getElementById('chat-form').addEventListener('submit', async function(e
 
         // Scroll to the bottom of the chat box
         chatBox.scrollTop = chatBox.scrollHeight;
+    } catch (error) {
+        // Remove loading indicator
+        chatBox.removeChild(loadingDiv);
+
+        const errorMessageDiv = document.createElement('div');
+        errorMessageDiv.className = 'message bot-message';
+        errorMessageDiv.textContent = 'Error: ' + error.message;
+        chatBox.appendChild(errorMessageDiv);
+
+        // Scroll to the bottom of the chat box
+        chatBox.scrollTop = chatBox.scrollHeight;
+    }
+});
+
+function formatResponse(response) {
+    // Split the response into separate points
+    const points = response.split(/(\d+\.\s)/).filter(Boolean);
+    let formattedResponse = '';
+
+    points.forEach((point, index) => {
+        if (index % 2 === 0) {
+            formattedResponse += `<strong>${point}</strong>`;
+        } else {
+            formattedResponse += `<p>${point}</p>`;
+        }
+    });
+
+    return formattedResponse;
+}
