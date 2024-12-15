@@ -26,7 +26,7 @@ document.getElementById('chat-form').addEventListener('submit', async function(e
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer API KEY`
+                'Authorization': `Your API KEY`
             },
             body: JSON.stringify({ message: query })
         });
